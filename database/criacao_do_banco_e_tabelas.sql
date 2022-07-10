@@ -102,6 +102,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `disciplina` (
   `cod_disciplina` INT NOT NULL AUTO_INCREMENT COMMENT 'Código de identificação da disciplina',
+  `cod_disciplina_depende` INT NULL,
   `nome_disciplina` VARCHAR(40) NOT NULL COMMENT 'Nome da disciplina',
   `descricao` VARCHAR(200) NULL COMMENT 'Descrição da disciplina',
   `cod_departamento` INT NOT NULL COMMENT 'Código de identificação do departamento',
@@ -111,6 +112,11 @@ CREATE TABLE IF NOT EXISTS `disciplina` (
   CONSTRAINT `fk_dep_disc`
     FOREIGN KEY (`cod_departamento`)
     REFERENCES `departamento` (`cod_departamento`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_disc_disc`
+	FOREIGN KEY (`cod_disciplina_depende`)
+    REFERENCES `disciplina` (`cod_disciplina`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -137,7 +143,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `hist_disciplina` (
   `cod_historico` INT NOT NULL COMMENT 'Código de identificação do histórico',
   `cod_disciplina` INT NOT NULL COMMENT 'Código de identificação da discipllina',
-  `nota` DECIMAL(4,2) NOT NULL COMMENT 'Nota da disciplina',
+  `nota` FLOAT(4,2) NOT NULL COMMENT 'Nota da disciplina',
   `frequencia` INT NOT NULL COMMENT 'Número de faltas, baseado no número de aulas da disciplina',
   PRIMARY KEY (`cod_historico`, `cod_disciplina`),
   CONSTRAINT `fk_hist_disc`
@@ -255,10 +261,10 @@ ENGINE = InnoDB;
 -- Table TELEFONES_ALUNO
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `telefones_aluno` (
-  `cod_telefone_aluno` INT NOT NULL COMMENT 'Código de identificação do telefone do aluno',
+  `cod_telefone_aluno` INT NOT NULL AUTO_INCREMENT COMMENT 'Código de identificação do telefone do aluno',
   `ra` INT NOT NULL,
   `cod_tipo_telefone` INT NOT NULL COMMENT 'Código de identificação do tipo de telefone do aluno',
-  `telefone_aluno` VARCHAR(15) NOT NULL,
+  `num_telefone` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`cod_telefone_aluno`),
   CONSTRAINT `fk_telefone_aluno`
     FOREIGN KEY (`ra`)

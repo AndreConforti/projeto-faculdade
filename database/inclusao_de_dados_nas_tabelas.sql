@@ -123,3 +123,37 @@ VALUES
 (6, 4, 'Matão', 206, '', 04213650);
 
 SELECT * FROM endereco_aluno;
+
+INSERT INTO hist_disciplina
+(cod_historico, cod_disciplina, nota, frequencia)
+VALUES
+(1, 2, 7, 6),
+(2, 3, 8.5, 2),
+(3, 1, 6.8, 8);
+
+SELECT * FROM hist_disciplina;
+
+INSERT INTO tipo_telefone
+(tipo_telefone)
+VALUES
+('Res'),
+('Come'),
+('Cel'),
+('Rec');
+
+SELECT * FROM tipo_telefone;
+
+INSERT INTO telefones_aluno
+(ra, cod_tipo_telefone, num_telefone)
+VALUES
+(1, 1, 35710001),
+(2, 1, 35725047),
+(2, 3, 944552211),
+(3, 1, 35715634),
+(3, 3, 988887777),
+(4, 1, 35418697),
+(4, 3, 966331122),
+(5, 1, 35692424);
+
+SELECT * FROM telefones_aluno;
+
