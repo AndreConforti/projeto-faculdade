@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `professor` (
   `cod_professor` INT NOT NULL AUTO_INCREMENT COMMENT 'Código do professor',
   `nome_professor` VARCHAR(40) NOT NULL COMMENT 'Nome do professor',
   `sobrenome_professor` VARCHAR(40) NOT NULL COMMENT 'Sobrenome do professor',
-  `status` TINYINT NOT NULL COMMENT 'Status (Lecionando / Não Lecionando)',
+  `status_prof` TINYINT NOT NULL COMMENT 'Status (Lecionando / Não Lecionando)',
   `cod_departamento` INT NOT NULL COMMENT 'Código do professor',
   PRIMARY KEY (`cod_professor`),
   CONSTRAINT `fk_dep_prof`
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `aluno` (
   `nome_aluno` VARCHAR(40) NOT NULL COMMENT 'Nome do aluno',
   `sobrenome_aluno` VARCHAR(40) NOT NULL COMMENT 'Sobrenome do aluno',
   `cpf` VARCHAR(11) NOT NULL COMMENT 'CPF do aluno',
-  `status` TINYINT NOT NULL COMMENT 'Status da matríula do aluno (ativo / inativo)',
+  `status_aluno` TINYINT NOT NULL COMMENT 'Status da matríula do aluno (ativo / inativo)',
   `cod_turma` INT NOT NULL COMMENT 'Código de identificação da turma',
   `cod_curso` INT NOT NULL COMMENT 'Código de identificação do curso',
   `sexo` CHAR(1) NOT NULL COMMENT 'Sexo (gênero) do aluno',
@@ -213,7 +213,7 @@ ENGINE = InnoDB;
 -- Table TIPO_LOGRADOURO
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tipo_logradouro` (
-  `cod_tipo_logradouro` INT NOT NULL COMMENT 'Código de identificação do tipo de logradouro',
+  `cod_tipo_logradouro` INT NOT NULL AUTO_INCREMENT COMMENT 'Código de identificação do tipo de logradouro',
   `tipo_logradouro` VARCHAR(10) NOT NULL COMMENT 'Nome do tipo de logradouro',
   PRIMARY KEY (`cod_tipo_logradouro`))
 ENGINE = InnoDB;
@@ -222,7 +222,7 @@ ENGINE = InnoDB;
 -- Table ENDERECO_ALUNO
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `endereco_aluno` (
-  `cod_endereco` INT NOT NULL COMMENT 'Código de identificação do endereço do aluno',
+  `cod_endereco` INT NOT NULL AUTO_INCREMENT COMMENT 'Código de identificação do endereço do aluno',
   `ra` INT NOT NULL COMMENT 'Código de identicação do aluno',
   `cod_tipo_logradouro` INT NOT NULL COMMENT 'Código de identifcação do tipo de logradouro',
   `nome_rua` VARCHAR(80) NOT NULL COMMENT 'Noma da rua do endereço do aluno',
@@ -246,7 +246,7 @@ ENGINE = InnoDB;
 -- Table TIPO_TELEFONE
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tipo_telefone` (
-  `cod_tipo_telefone` INT NOT NULL COMMENT 'Código de identificação do tipo de telefone do aluno',
+  `cod_tipo_telefone` INT NOT NULL AUTO_INCREMENT COMMENT 'Código de identificação do tipo de telefone do aluno',
   `tipo_telefone` VARCHAR(15) NOT NULL COMMENT 'Nome do tipo de telefone do aluno',
   PRIMARY KEY (`cod_tipo_telefone`))
 ENGINE = InnoDB;
@@ -271,4 +271,3 @@ CREATE TABLE IF NOT EXISTS `telefones_aluno` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
