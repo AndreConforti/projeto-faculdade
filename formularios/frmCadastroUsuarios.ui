@@ -20,85 +20,6 @@
    <string notr="true">background-color: rgb(154, 154, 154);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="txtNome">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>191</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="placeholderText">
-     <string>Nome completo</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="txtCPF">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>80</y>
-      <width>191</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="placeholderText">
-     <string>CPF</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="txtLogin">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>120</y>
-      <width>191</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="placeholderText">
-     <string>Login</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="txtSenha">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>160</y>
-      <width>191</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::Password</enum>
-    </property>
-    <property name="placeholderText">
-     <string>Senha</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btnCancelar">
     <property name="geometry">
      <rect>
@@ -151,9 +72,9 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>230</y>
+      <y>220</y>
       <width>191</width>
-      <height>41</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -170,7 +91,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>0</y>
+      <y>10</y>
       <width>191</width>
       <height>41</height>
      </rect>
@@ -189,14 +110,68 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txtContraSenha">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
+   <widget class="QLineEdit" name="txtNome">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>200</y>
+      <y>60</y>
+      <width>191</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Nome Completo</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtCPF">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>191</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>CPF</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtLogin">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>191</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Login</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtSenha">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>150</y>
       <width>191</width>
       <height>20</height>
      </rect>
@@ -207,8 +182,33 @@
     <property name="echoMode">
      <enum>QLineEdit::Password</enum>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
     <property name="placeholderText">
-     <string>Repita a senha</string>
+     <string>Senha</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtSenha_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>191</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Repita a Senha</string>
     </property>
    </widget>
   </widget>
