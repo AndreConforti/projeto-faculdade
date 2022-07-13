@@ -20,10 +20,10 @@
    <widget class="QPushButton" name="btnSair">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>210</y>
+      <x>20</x>
+      <y>220</y>
       <width>81</width>
-      <height>31</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -37,10 +37,10 @@ background-color: rgb(255, 170, 127);</string>
    <widget class="QPushButton" name="btnEntrar">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>210</y>
+      <x>130</x>
+      <y>220</y>
       <width>81</width>
-      <height>31</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">

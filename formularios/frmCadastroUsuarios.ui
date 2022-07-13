@@ -20,7 +20,7 @@
    <string notr="true">background-color: rgb(154, 154, 154);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btnCancelar">
+   <widget class="QPushButton" name="btnVoltar">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -33,13 +33,13 @@
      <string notr="true">background-color: rgb(255, 170, 127);</string>
     </property>
     <property name="text">
-     <string>Cancelar</string>
+     <string>Voltar</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnLimpar">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>20</x>
       <y>290</y>
       <width>75</width>
       <height>23</height>
@@ -55,7 +55,7 @@
    <widget class="QPushButton" name="btnCadastrar">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>130</x>
       <y>290</y>
       <width>75</width>
       <height>23</height>

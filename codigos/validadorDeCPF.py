@@ -54,6 +54,8 @@ def segundoDigito():
 
 cpf_numerado = []
 #cpf = str(input("Digite o CPF : ")).replace('.', ',').replace('-', '').strip()
+cpf = '27875969832'
+
 
 cpfCorreto = quantidade()
 
