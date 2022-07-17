@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets, uic
 from time import sleep
+import faculdadeTela1
 
 
 global cpf_numerado
@@ -7,6 +8,7 @@ global cpf
 global cpfCorreto 
 global cpfPrimeiroDigito
 global cpfSegundoDigito
+
 
 # FUNÇÕES ----------------------------------------------------
 def sairDoSistema():
@@ -59,7 +61,6 @@ def verificarCadastro():
     global cpfSegundoDigito
 
     telaCadastrarUsuario.lblAviso.setText('')
-
     nome = telaCadastrarUsuario.txtNome.text().upper().strip()
     cpf = telaCadastrarUsuario.txtCPF.text().replace('.', '').replace('-', '').strip()
     login = telaCadastrarUsuario.txtLogin.text()
@@ -81,9 +82,6 @@ def verificarCadastro():
         else:
             telaCadastrarUsuario.lblAviso.setText('Senha não confere. Verifique novamente')
     else: telaCadastrarUsuario.lblAviso.setText('CPF Inválido!!!')
-
-    
-
     print(nome)
     print(cpf)
     print(login)
@@ -91,7 +89,6 @@ def verificarCadastro():
     print(senha2)
 
     
-
 # ------------------------------------------------------------------------------------------------
 # VERIFICA O TAMANHO DO CPF
 def quantidade():
