@@ -18,9 +18,16 @@ def sairDoSistema():
 def entrarNoSistema():
     login = telaLogin.txtLogin.text()
     senha = telaLogin.txtSenha.text()
-    telaLogin.close()
-    telaLogado.show()
-   
+    if login == 'adm' and senha == 'adm':
+        telaLogin.txtLogin.setText('')
+        telaLogin.txtSenha.setText('')
+        telaLogin.close()
+        telaLogado.show()
+    else:
+        telaLogin.lblAviso.setText('Usuário ou Senha inválidos')
+        telaLogin.txtLogin.setText('')
+        telaLogin.txtSenha.setText('')
+           
 
 def voltarAoLogin():
     telaLogado.close()
@@ -63,7 +70,7 @@ def verificarCadastro():
     telaCadastrarUsuario.lblAviso.setText('')
     nome = telaCadastrarUsuario.txtNome.text().upper().strip()
     cpf = telaCadastrarUsuario.txtCPF.text().replace('.', '').replace('-', '').strip()
-    login = telaCadastrarUsuario.txtLogin.text()
+    login = telaCadastrarUsuario.txtLogin.text().strip()
     senha = telaCadastrarUsuario.txtSenha.text()
     senha2 = telaCadastrarUsuario.txtSenha_2.text()
 
@@ -72,13 +79,19 @@ def verificarCadastro():
     cpfPrimeiroDigito = primeiroDigito()
     cpfSegundoDigito = segundoDigito()
     if cpfCorreto and cpfPrimeiroDigito and cpfSegundoDigito:
-        if senha == senha2:
-            telaCadastrarUsuario.lblAviso.setText('Usuário cadastrado com sucesso')
-            telaCadastrarUsuario.txtNome.setText('')
-            telaCadastrarUsuario.txtCPF.setText('')
-            telaCadastrarUsuario.txtLogin.setText('')
-            telaCadastrarUsuario.txtSenha.setText('')
-            telaCadastrarUsuario.txtSenha_2.setText('')
+        if len(senha) >= 3 and len(senha) <= 10 and senha == senha2:
+            if nome != '':
+                if len(login) >= 3 and len(login) <= 10:
+                    telaCadastrarUsuario.lblAviso.setText('Usuário cadastrado com sucesso')
+                    telaCadastrarUsuario.txtNome.setText('')
+                    telaCadastrarUsuario.txtCPF.setText('')
+                    telaCadastrarUsuario.txtLogin.setText('')
+                    telaCadastrarUsuario.txtSenha.setText('')
+                    telaCadastrarUsuario.txtSenha_2.setText('')
+                else:
+                    telaCadastrarUsuario.lblAviso.setText('O campo login deve ter no mínimo 3 e no máximo 10 caracteres')
+            else: 
+                telaCadastrarUsuario.lblAviso.setText('Digite seu nome')
         else:
             telaCadastrarUsuario.lblAviso.setText('Senha não confere. Verifique novamente')
     else: telaCadastrarUsuario.lblAviso.setText('CPF Inválido!!!')
