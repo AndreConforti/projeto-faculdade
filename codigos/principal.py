@@ -1,13 +1,22 @@
 from PyQt5 import QtWidgets, uic
-from time import sleep
-import faculdadeTela1
+import mysql.connector
 
 
+# VARIÁVEIS GLOBAIS ------------------------------------------
 global cpf_numerado
 global cpf
 global cpfCorreto 
 global cpfPrimeiroDigito
 global cpfSegundoDigito
+
+
+# CONEXÃO AO BANCO -------------------------------------------
+conex = mysql.connector.connect(
+    host = 'localhost',
+    user = 'root',
+    password = '',
+    database = 'db_faculdade',
+)
 
 
 # FUNÇÕES ----------------------------------------------------

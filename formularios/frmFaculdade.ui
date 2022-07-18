@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmFaculdade</class>
+ <widget class="QMainWindow" name="frmFaculdade">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>604</width>
+    <height>384</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Faculdades *********</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(198, 198, 198);</string>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks</set>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QComboBox" name="cbbopcoes">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>231</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string extracomment="Departamento">Departamento</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <selectedon>../../../../../../Andre/print_validador - siagold.png</selectedon>
+      </iconset>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Professor</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Curso</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string extracomment="Aluno">Aluno</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
