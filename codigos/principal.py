@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets, uic
 import mysql.connector
+import departamento
 
 
 # VARIÁVEIS GLOBAIS ------------------------------------------

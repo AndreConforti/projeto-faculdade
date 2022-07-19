@@ -56,27 +56,9 @@
      </property>
     </widget>
    </widget>
-   <widget class="QTableWidget" name="tblConsultaDepartamento">
+   <widget class="QFrame" name="fraOpcoes">
     <property name="enabled">
      <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>120</y>
-      <width>731</width>
-      <height>192</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-   </widget>
-   <widget class="QFrame" name="frOpcoes">
-    <property name="enabled">
-     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -134,7 +116,7 @@
    </widget>
    <widget class="QFrame" name="fraAdiciona">
     <property name="enabled">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -186,6 +168,38 @@
       </rect>
      </property>
     </widget>
+   </widget>
+   <widget class="QTableWidget" name="tblConsultaDepartamento">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>731</width>
+      <height>192</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>Nº</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Departamento</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
    </widget>
   </widget>
  </widget>
