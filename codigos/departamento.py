@@ -16,18 +16,40 @@ def consultarDepartamento():
     telaDepartamento.tblConsultaDepartamento.setRowCount(len(resultado))
     telaDepartamento.tblConsultaDepartamento.setColumnCount(2)
     telaDepartamento.fraAdiciona.setEnabled(False)
-    telaDepartamento.fraOpcoes.setEnabled(False)
+    telaDepartamento.fraOpcoes.setEnabled(True)
     
     for i in range (0, len(resultado)):
         for j in range (0, 2):
             telaDepartamento.tblConsultaDepartamento.setItem(i,j,QtWidgets.QTableWidgetItem(str(resultado[i][j])))
             print(resultado[i][j])
 
+    cursor.close()
+
 
 def adicionarDepartamento():
     telaDepartamento.fraAdiciona.setEnabled(True)
+    telaDepartamento.lblAviso.setText('')
 
 
+def enviarNovoDepartamento():
+    nome_departamento = telaDepartamento.txtNome.text().strip()
+    if len(nome_departamento) > 0:
+        cursor = conex.cursor()
+        comando = f'INSERT INTO departamento (nome_departamento) VALUES ("{nome_departamento}")'
+        cursor.execute(comando)
+        conex.commit()
+        cursor.close()
+        telaDepartamento.txtNome.setText('')
+        telaDepartamento.fraAdiciona.setEnabled(False)
+        telaDepartamento.lblAviso.setText('CADASTRADO COM SUCESSO')
+    else:
+        telaDepartamento.lblAviso.setText('ERRO. Tente novamente')
+        telaDepartamento.fraAdiciona.setEnabled(False)
+
+
+def sairDepartamento():
+    conex.close()
+    telaDepartamento.close() 
 
 
 
@@ -45,6 +67,8 @@ telaDepartamento = uic.loadUi('../formularios/frmDepartamento.ui')
 
 telaDepartamento.btnConsultar.clicked.connect(consultarDepartamento)
 telaDepartamento.btnAdicionar.clicked.connect(adicionarDepartamento)
+telaDepartamento.btnEnviar.clicked.connect(enviarNovoDepartamento)
+telaDepartamento.btnVoltar.clicked.connect(sairDepartamento)
 
 telaDepartamento.show()
 app.exec()
