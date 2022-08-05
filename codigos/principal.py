@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets, uic
 import mysql.connector
 import faculdadeTela1
 import validadorDeCPF
+import departamento
 
 # VARIÁVEIS GLOBAIS ------------------------------------------
 global cpf_numerado

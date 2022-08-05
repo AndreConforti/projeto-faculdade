@@ -52,26 +52,18 @@ def sairDepartamento():
     telaDepartamento.close() 
 
 
+def chama_departamento():
+    app = QtWidgets.QApplication([])
 
+    telaDepartamento = uic.loadUi('../formularios/frmDepartamento.ui')
 
+    telaDepartamento.btnConsultar.clicked.connect(consultarDepartamento)
+    telaDepartamento.btnAdicionar.clicked.connect(adicionarDepartamento)
+    telaDepartamento.btnEnviar.clicked.connect(enviarNovoDepartamento)
+    telaDepartamento.btnVoltar.clicked.connect(sairDepartamento)
 
+    telaDepartamento.show()
+    app.exec()
 
-
-
-
-app = QtWidgets.QApplication([])
-
-telaDepartamento = uic.loadUi('../formularios/frmDepartamento.ui')
-
-
-
-telaDepartamento.btnConsultar.clicked.connect(consultarDepartamento)
-telaDepartamento.btnAdicionar.clicked.connect(adicionarDepartamento)
-telaDepartamento.btnEnviar.clicked.connect(enviarNovoDepartamento)
-telaDepartamento.btnVoltar.clicked.connect(sairDepartamento)
-
-telaDepartamento.show()
-app.exec()
-
-
+global telaDepartamento
 
